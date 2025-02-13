@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: multi-app-project
+  namespace: argocd
+spec:
+  destinations:
+  - namespace: test-argo
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - '*'

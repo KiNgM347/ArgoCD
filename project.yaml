@@ -8,4 +8,4 @@ spec:
   - namespace: test-argo
     server: https://kubernetes.default.svc
   sourceRepos:
-  - '*'
+  - https://github.com/KiNgM347/ArgoCD.git

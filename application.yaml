@@ -2,17 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: multi-app
-  namespace: argocd
+  namespace: argocd  # Namespace di ArgoCD
 spec:
-  project: multi-app-project
+  project: multi-app-project  # Il progetto di appartenenza
   source:
-    repoURL: https://github.com/KiNgM347/ArgoCD.git
-    targetRevision: main
-    path: .
+    repoURL: https://github.com/KiNgM347/ArgoCD.git  # Repository da cui attingere i file
+    targetRevision: main  # La branch del repository
+    path: .  # Path dove sono contenuti i manifest
   destination:
     server: https://kubernetes.default.svc
-    namespace: test-argo
+    namespace: test-argo  # Namespace di destinazione dove l'app sarà deployata
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: true  # Rimuove risorse non più gestite
+      selfHeal: true  # Rende l'app auto-riparante in caso di errori

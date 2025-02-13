@@ -6,7 +6,7 @@ metadata:
 spec:
   project: multi-app-project
   source:
-    repoURL: 'https://github.com/KiNgM347/ArgoCD.git'
+    repoURL: https://github.com/KiNgM347/ArgoCD.git
     targetRevision: main
     path: .
   destination:

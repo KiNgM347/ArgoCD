@@ -4,10 +4,14 @@ metadata:
   name: multi-app-project
   namespace: argocd
 spec:
-  sourceRepos:
-    - '*'
   destinations:
-    - namespace: test-argo
-      server: https://kubernetes.default.svc
-    - namespace: argocd
-      server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  sourceRepos:
+  - '*'

@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: multi-app-project
-  namespace: argocd  # Namespace in cui è installato ArgoCD
+  namespace: argocd
 spec:
-  # Definizione dei namespace in cui le applicazioni possono essere deployate
-  destinations:
-  - namespace: test-argo  # Namespace in cui verranno deployate le app
-    server: https://kubernetes.default.svc
-  # Repository da cui le applicazioni saranno caricate
   sourceRepos:
-  - https://github.com/KiNgM347/ArgoCD.git  # Repository del codice
+    - '*'
+  destinations:
+    - namespace: test-argo
+      server: https://kubernetes.default.svc
+    - namespace: argocd
+      server: https://kubernetes.default.svc
